@@ -1,0 +1,15 @@
+{
+    "name" : "boss",
+    "id"  : 1,
+    "uri" : "mysql://repl%2F123456@localhost:3306/1/mysql-bin",
+    "slowSourceQueryThreshold" : 2000,
+    "sources" :
+    [
+        {
+        "id" : 40,
+        "name" : "com.lefu.boss.goods",
+        "uri": "boss.GOODS",
+        "partitionFunction" : "constant:1"
+         }
+    ]
+}
