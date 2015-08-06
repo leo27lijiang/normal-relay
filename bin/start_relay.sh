@@ -17,14 +17,23 @@ cd $root_dir
 conf_dir="./conf"
 lib_dir="./lib"
 log_dir="./logs"
+var_dir="./var"
 
 cp="."
 for f in ${lib_dir}/*.jar ; do
   cp="${cp}:${f}"
 done
 
-relay_pid_file=${root_dir}/var/databus2-relay.pid
-relay_out_file=${root_dir}/logs/databus2-relay.out
+if [ ! -d "$log_dir" ]; then
+  $(mkdir "$log_dir")
+fi
+
+if [ ! -d "$var_dir" ]; then
+  $(mkdir "$var_dir")
+fi
+
+relay_pid_file=${var_dir}/databus2-relay.pid
+relay_out_file=${log_dir}/databus2-relay.out
 
 jvm_gc_log="$log_dir/relay-gc.log"
 
