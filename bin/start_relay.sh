@@ -62,6 +62,6 @@ main_class="com.lefu.normalrelay.NormalRelay"
 
 cmdline="java -cp ${cp} ${jvm_arg_line} ${main_class} ${java_arg_line} "
 echo $cmdline
-$cmdline 2>&1 > ${relay_out_file} &
+$cmdline >> ${relay_out_file} 2>&1 &
 echo $! > ${relay_pid_file}
 
